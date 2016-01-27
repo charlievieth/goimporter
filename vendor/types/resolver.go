@@ -14,7 +14,7 @@ import (
 	"strings"
 	"unicode"
 
-	"golang.org/x/tools/go/exact"
+	"git.vieth.io/goimporter/vendor/exact"
 )
 
 // A declInfo describes a package-level const, type, var, or func declaration.

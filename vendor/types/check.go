@@ -10,7 +10,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"golang.org/x/tools/go/exact"
+	"git.vieth.io/goimporter/vendor/exact"
 )
 
 // debugging/development support
