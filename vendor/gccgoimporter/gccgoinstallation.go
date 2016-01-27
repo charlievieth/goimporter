@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"golang.org/x/tools/go/types"
+	"git.vieth.io/goimporter/vendor/types"
 )
 
 // Information about a specific installation of gccgo.

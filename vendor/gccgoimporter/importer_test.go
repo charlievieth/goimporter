@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"testing"
 
-	"golang.org/x/tools/go/types"
+	"git.vieth.io/goimporter/vendor/types"
 )
 
 type importerTest struct {

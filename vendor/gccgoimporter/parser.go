@@ -14,8 +14,8 @@ import (
 	"strings"
 	"text/scanner"
 
-	"golang.org/x/tools/go/exact"
-	"golang.org/x/tools/go/types"
+	"git.vieth.io/goimporter/vendor/exact"
+	"git.vieth.io/goimporter/vendor/types"
 )
 
 type parser struct {
