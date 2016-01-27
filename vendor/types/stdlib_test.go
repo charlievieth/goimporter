@@ -22,8 +22,8 @@ import (
 	"testing"
 	"time"
 
+	_ "git.vieth.io/goimporter/vendor/gcimporter"
 	. "git.vieth.io/goimporter/vendor/types"
-	_ "golang.org/x/tools/go/gcimporter"
 )
 
 var (

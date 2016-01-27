@@ -12,8 +12,8 @@ import (
 	"sort"
 	"testing"
 
+	_ "git.vieth.io/goimporter/vendor/gcimporter"
 	. "git.vieth.io/goimporter/vendor/types"
-	_ "golang.org/x/tools/go/gcimporter"
 )
 
 func TestResolveIdents(t *testing.T) {

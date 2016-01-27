@@ -122,7 +122,7 @@ type Config struct {
 // DefaultImport is the default importer invoked if Config.Import == nil.
 // The declaration:
 //
-//	import _ "golang.org/x/tools/go/gcimporter"
+//	import _ "git.vieth.io/goimporter/vendor/gcimporter"
 //
 // in a client of go/types will initialize DefaultImport to gcimporter.Import.
 var DefaultImport Importer
