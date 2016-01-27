@@ -1,5 +1,6 @@
 // +build !go1.5
 
+// Package importer provides access to export data importers.
 package goimporter
 
 import (
