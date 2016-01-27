@@ -14,7 +14,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	. "golang.org/x/tools/go/types"
+	. "git.vieth.io/goimporter/vendor/types"
 )
 
 var (

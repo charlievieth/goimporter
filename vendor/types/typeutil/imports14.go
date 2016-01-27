@@ -6,7 +6,7 @@
 
 package typeutil
 
-import "golang.org/x/tools/go/types"
+import "git.vieth.io/goimporter/vendor/types"
 
 // Dependencies returns all dependencies of the specified packages.
 //

@@ -10,8 +10,8 @@ import (
 	"go/token"
 	"testing"
 
+	. "git.vieth.io/goimporter/vendor/types"
 	_ "golang.org/x/tools/go/gcimporter"
-	. "golang.org/x/tools/go/types"
 )
 
 const filename = "<src>"

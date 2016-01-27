@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"golang.org/x/tools/go/types"
+	"git.vieth.io/goimporter/vendor/types"
 )
 
 // Map is a hash-table-based mapping from types (types.Type) to

@@ -14,7 +14,7 @@ import (
 	"go/types"
 	"testing"
 
-	"golang.org/x/tools/go/types/typeutil"
+	"git.vieth.io/goimporter/vendor/types/typeutil"
 )
 
 type closure map[string]*types.Package

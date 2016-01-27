@@ -8,7 +8,7 @@ import (
 	"go/parser"
 	"testing"
 
-	. "golang.org/x/tools/go/types"
+	. "git.vieth.io/goimporter/vendor/types"
 )
 
 var testExprs = []testEntry{
