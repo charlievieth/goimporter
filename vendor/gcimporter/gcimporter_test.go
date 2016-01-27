@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"golang.org/x/tools/go/types"
+	"git.vieth.io/goimporter/vendor/types"
 )
 
 // skipSpecialPlatforms causes the test to be skipped for platforms where
