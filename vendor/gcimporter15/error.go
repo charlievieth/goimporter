@@ -1,3 +1,5 @@
+// +build go1.5
+
 package gcimporter
 
 // A NotFoundError is returned by Import when the package file cannot be found.

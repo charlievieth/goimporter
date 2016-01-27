@@ -2,8 +2,10 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// +build go1.5
+
 // Package gcimporter implements Import for gc-generated object files.
-package gcimporter
+package gcimporter // import "git.vieth.io/goimporter/vendor/gcimporter15"
 
 import (
 	"bufio"
