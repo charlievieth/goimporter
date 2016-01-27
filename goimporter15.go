@@ -11,7 +11,7 @@ import (
 	"os/exec"
 	"runtime"
 
-	"git.vieth.io/define/importer/internal/gcimporter"
+	"git.vieth.io/goimporter/vendor/gcimporter15"
 )
 
 // DefaultContext, returns a copy of the default build.Context with updated
