@@ -6,9 +6,9 @@ package goimporter
 import (
 	"runtime"
 
-	"git.vieth.io/goimporter/vendor/gccgoimporter"
-	"git.vieth.io/goimporter/vendor/gcimporter"
-	"git.vieth.io/goimporter/vendor/types"
+	"git.vieth.io/goimporter/internal/gccgoimporter"
+	"git.vieth.io/goimporter/internal/gcimporter"
+	"git.vieth.io/goimporter/internal/types"
 )
 
 func For(compiler string) types.Importer {
