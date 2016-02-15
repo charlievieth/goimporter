@@ -33,8 +33,8 @@ const debug = false
 var pkgExts = [...]string{".a", ".o"}
 
 // FindPkg returns the filename and unique package id for an import
-// path based on package information provided by build.Import (using
-// the build.Default build.Context).
+// path based on package information provided by buildutil.Import (using
+// the provided build.Context, or build.Default if nil).
 // If no file was found, an empty filename is returned.
 //
 func FindPkg(ctxt *build.Context, path, srcDir string) (filename, id string) {
@@ -114,6 +114,8 @@ func ImportData(packages map[string]*types.Package, filename, id string, data io
 // corresponding package object to the packages map, and returns the object.
 // Local import paths are interpreted relative to the current working directory.
 // The packages map must contain all packages already imported.
+//
+// If the gc-generated package cannot be found a NotFoundError is returned.
 //
 func Import(ctxt *build.Context, packages map[string]*types.Package, path string) (pkg *types.Package, err error) {
 	// package "unsafe" is handled by the type checker
