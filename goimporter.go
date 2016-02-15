@@ -29,3 +29,7 @@ func For(compiler string) types.Importer {
 func Default() types.Importer {
 	return For(runtime.Compiler)
 }
+
+func IsNotFound(err error) bool {
+	return gcimporter.IsNotFound(err)
+}

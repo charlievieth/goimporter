@@ -80,7 +80,7 @@ func (m *gcimports) Import(path string) (pkg *types.Package, err error) {
 	pkg, err = gcimporter.Import(m.ctxt, m.pkgs, path)
 
 	// Attempt to install missing packages.
-	if gcimporter.IsNotFound(err) {
+	if IsNotFound(err) {
 		bp, _ := m.ctxt.Import(path, ".", build.FindOnly|build.AllowBinary)
 		if bp.PkgObj == "" {
 			return
@@ -96,4 +96,8 @@ func (m *gcimports) Import(path string) (pkg *types.Package, err error) {
 	}
 
 	return
+}
+
+func IsNotFound(err error) bool {
+	return gcimporter.IsNotFound(err)
 }
