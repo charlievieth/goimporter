@@ -21,6 +21,8 @@ import (
 	"strings"
 	"text/scanner"
 
+	"git.vieth.io/buildutil"
+
 	exact "go/constant"
 	"go/types"
 )
@@ -46,7 +48,7 @@ func FindPkg(ctxt *build.Context, path, srcDir string) (filename, id string) {
 	default:
 		// "x" -> "$GOPATH/pkg/$GOOS_$GOARCH/x.ext", "x"
 		// Don't require the source files to be present.
-		bp, _ := ctxt.Import(path, srcDir, build.FindOnly|build.AllowBinary)
+		bp, _ := buildutil.Import(ctxt, path, srcDir, build.FindOnly|build.AllowBinary)
 		if bp.PkgObj == "" {
 			return
 		}
