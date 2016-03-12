@@ -28,7 +28,9 @@ import (
 const debug = false
 
 func init() {
-	types.DefaultImport = Import
+	types.DefaultImport = func(packages map[string]*types.Package, path string) (*types.Package, error) {
+		return Import(&build.Default, packages, path)
+	}
 }
 
 var pkgExts = [...]string{".a", ".5", ".6", ".7", ".8", ".9"}
@@ -38,7 +40,7 @@ var pkgExts = [...]string{".a", ".5", ".6", ".7", ".8", ".9"}
 // the build.Default build.Context).
 // If no file was found, an empty filename is returned.
 //
-func FindPkg(path, srcDir string) (filename, id string) {
+func FindPkg(ctxt *build.Context, path, srcDir string) (filename, id string) {
 	if len(path) == 0 {
 		return
 	}
@@ -116,7 +118,9 @@ func ImportData(packages map[string]*types.Package, filename, id string, data io
 // Local import paths are interpreted relative to the current working directory.
 // The packages map must contains all packages already imported.
 //
-func Import(packages map[string]*types.Package, path string) (pkg *types.Package, err error) {
+// If the gc-generated package cannot be found a *NotFoundError is returned.
+//
+func Import(ctxt *build.Context, packages map[string]*types.Package, path string) (pkg *types.Package, err error) {
 	if path == "unsafe" {
 		return types.Unsafe, nil
 	}
@@ -129,9 +133,9 @@ func Import(packages map[string]*types.Package, path string) (pkg *types.Package
 		}
 	}
 
-	filename, id := FindPkg(path, srcDir)
+	filename, id := FindPkg(ctxt, path, srcDir)
 	if filename == "" {
-		err = fmt.Errorf("can't find import: %s", id)
+		err = &NotFoundError{id: id, path: path}
 		return
 	}
 
