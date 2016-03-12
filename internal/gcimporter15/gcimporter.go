@@ -12,7 +12,9 @@ import (
 	"errors"
 	"fmt"
 	"go/build"
+	exact "go/constant"
 	"go/token"
+	"go/types"
 	"io"
 	"os"
 	"path/filepath"
@@ -22,9 +24,6 @@ import (
 	"text/scanner"
 
 	"git.vieth.io/buildutil"
-
-	exact "go/constant"
-	"go/types"
 )
 
 // debugging/development support
@@ -115,7 +114,7 @@ func ImportData(packages map[string]*types.Package, filename, id string, data io
 // Local import paths are interpreted relative to the current working directory.
 // The packages map must contain all packages already imported.
 //
-// If the gc-generated package cannot be found a NotFoundError is returned.
+// If the gc-generated package cannot be found a *NotFoundError is returned.
 //
 func Import(ctxt *build.Context, packages map[string]*types.Package, path string) (pkg *types.Package, err error) {
 	// package "unsafe" is handled by the type checker

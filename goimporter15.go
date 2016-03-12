@@ -37,6 +37,7 @@ func For(compiler string) types.Importer {
 	return nil
 }
 
+// Default returns an Importer for the compiler that built the running binary.
 func Default() types.Importer {
 	return For(runtime.Compiler)
 }
@@ -98,6 +99,7 @@ func (m *gcimports) Import(path string) (pkg *types.Package, err error) {
 	return
 }
 
+// IsNotFound returns if err is a gcimporter.NotFoundError.
 func IsNotFound(err error) bool {
 	return gcimporter.IsNotFound(err)
 }
