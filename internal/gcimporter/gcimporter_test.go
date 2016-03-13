@@ -19,7 +19,10 @@ import (
 	"git.vieth.io/goimporter/internal/types"
 )
 
-var Default = &build.Default
+func Default() *build.Context {
+	ctxt := build.Default
+	return &ctxt
+}
 
 // skipSpecialPlatforms causes the test to be skipped for platforms where
 // builders (build.golang.org) don't have access to compiled packages for
@@ -64,7 +67,7 @@ var imports = make(map[string]*types.Package)
 
 func testPath(t *testing.T, path string) *types.Package {
 	t0 := time.Now()
-	pkg, err := Import(Default, imports, path)
+	pkg, err := Import(Default(), imports, path)
 	if err != nil {
 		t.Errorf("testPath(%s): %s", path, err)
 		return nil
@@ -167,7 +170,7 @@ func TestImportedTypes(t *testing.T) {
 		importPath := s[0]
 		objName := s[1]
 
-		pkg, err := Import(Default, imports, importPath)
+		pkg, err := Import(Default(), imports, importPath)
 		if err != nil {
 			t.Error(err)
 			continue
@@ -195,7 +198,7 @@ func TestIssue5815(t *testing.T) {
 		return
 	}
 
-	pkg, err := Import(Default, make(map[string]*types.Package), "strings")
+	pkg, err := Import(Default(), make(map[string]*types.Package), "strings")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -229,7 +232,7 @@ func TestCorrectMethodPackage(t *testing.T) {
 	}
 
 	imports := make(map[string]*types.Package)
-	_, err := Import(Default, imports, "net/http")
+	_, err := Import(Default(), imports, "net/http")
 	if err != nil {
 		t.Fatal(err)
 	}
