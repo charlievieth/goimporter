@@ -31,12 +31,22 @@ func boolByte(b bool) []byte {
 	return []byte{0}
 }
 
+func Default() *build.Context {
+	ctxt := build.Default
+	return &ctxt
+}
+
 func TestHash(t *testing.T) {
-	// c := &build.Default
-	h1 := referenceHash(&build.Default)
-	h2 := hash(&build.Default)
+	c := Default()
+	ref := referenceHash(c)
+	h1 := hash(c)
+	if ref != h1 {
+		t.Fatalf("Hash: expected (%v) got (%v)", ref, h1)
+	}
+	// Hash again to make sure we did not modify the Context
+	h2 := hash(c)
 	if h1 != h2 {
-		t.Fatalf("Hash: expected (%v) got (%v)", h1, h2)
+		t.Fatalf("Hash modified Context: expected (%v) got (%v)", h1, h2)
 	}
 }
 

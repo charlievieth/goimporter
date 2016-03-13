@@ -9,8 +9,6 @@ import (
 var table = crc64.MakeTable(crc64.ISO)
 
 func hash(c *build.Context) uint64 {
-	// This is absurd, but why not.
-
 	var b []byte
 	w := crc64.New(table)
 
@@ -34,11 +32,12 @@ func hash(c *build.Context) uint64 {
 	*(*int)(unsafe.Pointer((uintptr(unsafe.Pointer(&b)) + 16))) = len(c.GOPATH)
 	w.Write(b)
 
+	*(*uintptr)(unsafe.Pointer((uintptr(unsafe.Pointer(&b))))) = (uintptr)(unsafe.Pointer(&c.CgoEnabled))
 	*(*int)(unsafe.Pointer((uintptr(unsafe.Pointer(&b)) + 8))) = 1
 	*(*int)(unsafe.Pointer((uintptr(unsafe.Pointer(&b)) + 16))) = 1
-	b[0] = *(*byte)(unsafe.Pointer(&c.CgoEnabled))
 	w.Write(b)
-	b[0] = *(*byte)(unsafe.Pointer(&c.UseAllFiles))
+
+	*(*uintptr)(unsafe.Pointer((uintptr(unsafe.Pointer(&b))))) = (uintptr)(unsafe.Pointer(&c.UseAllFiles))
 	w.Write(b)
 
 	for _, s := range c.BuildTags {
@@ -59,5 +58,6 @@ func hash(c *build.Context) uint64 {
 	*(*int)(unsafe.Pointer((uintptr(unsafe.Pointer(&b)) + 8))) = len(c.InstallSuffix)
 	*(*int)(unsafe.Pointer((uintptr(unsafe.Pointer(&b)) + 16))) = len(c.InstallSuffix)
 	w.Write(b)
+
 	return w.Sum64()
 }
