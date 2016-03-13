@@ -19,8 +19,8 @@ import (
 // GOROOT and GOPATH fields.
 func DefaultContext() *build.Context {
 	ctxt := build.Default
-	ctxt.GOROOT = runtime.GOROOT()
-	ctxt.GOPATH = os.Getenv("GOPATH")
+	// ctxt.GOROOT = runtime.GOROOT()
+	// ctxt.GOPATH = os.Getenv("GOPATH")
 	return &ctxt
 }
 
