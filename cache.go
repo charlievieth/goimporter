@@ -4,11 +4,11 @@ package goimporter
 
 import (
 	"go/build"
-	"go/types"
 	"os"
 
 	"git.vieth.io/goimporter/internal/gcimporter"
 	"git.vieth.io/goimporter/internal/lru"
+	"git.vieth.io/goimporter/internal/types"
 )
 
 type Cache struct {
@@ -22,7 +22,7 @@ func NewCache(maxEntries int) *Cache {
 type cacheImporter struct {
 	ctxt  *build.Context
 	cache *lru.Cache
-	gc    types.Importer
+	imp   types.Importer
 }
 
 func findPkg(ctxt *build.Context, path string) (filename string, err error) {
@@ -37,7 +37,7 @@ func findPkg(ctxt *build.Context, path string) (filename string, err error) {
 	return
 }
 
-func (c *cacheImporter) Import(path string) (pkg *types.Package, err error) {
+func (c *cacheImporter) Import(pkgs map[string]*types.Package, path string) (pkg *types.Package, err error) {
 	var fi os.FileInfo
 	filename, err := findPkg(c.ctxt, path)
 	if err != nil {
@@ -52,10 +52,10 @@ func (c *cacheImporter) Import(path string) (pkg *types.Package, err error) {
 			return pc.Pkg, nil
 		}
 	}
-	if c.gc == nil {
-		c.gc = New(c.ctxt)
+	if c.imp == nil {
+		c.imp = New(c.ctxt)
 	}
-	pkg, err = c.gc.Import(path)
+	pkg, err = c.imp(pkgs, path)
 	if err != nil {
 		return
 	}
@@ -70,8 +70,9 @@ func (c *cacheImporter) Import(path string) (pkg *types.Package, err error) {
 }
 
 func (c *Cache) Importer(ctxt *build.Context) types.Importer {
-	return &cacheImporter{
+	m := &cacheImporter{
 		ctxt:  ctxt,
 		cache: c.c,
 	}
+	return m.Import
 }
