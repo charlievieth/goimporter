@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	_ "git.vieth.io/goimporter/internal/gcimporter"
-	. "git.vieth.io/goimporter/internal/types"
+	_ "github.com/charlievieth/goimporter/internal/gcimporter"
+	. "github.com/charlievieth/goimporter/internal/types"
 )
 
 func testEval(t *testing.T, fset *token.FileSet, pkg *Package, pos token.Pos, expr string, typ Type, typStr, valStr string) {

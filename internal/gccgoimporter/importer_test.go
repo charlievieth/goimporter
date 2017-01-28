@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"testing"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 type importerTest struct {

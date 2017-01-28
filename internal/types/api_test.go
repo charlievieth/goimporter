@@ -16,8 +16,8 @@ import (
 	"strings"
 	"testing"
 
-	_ "git.vieth.io/goimporter/internal/gcimporter"
-	. "git.vieth.io/goimporter/internal/types"
+	_ "github.com/charlievieth/goimporter/internal/gcimporter"
+	. "github.com/charlievieth/goimporter/internal/types"
 )
 
 // skipSpecialPlatforms causes the test to be skipped for platforms where

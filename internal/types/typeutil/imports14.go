@@ -6,7 +6,7 @@
 
 package typeutil
 
-import "git.vieth.io/goimporter/internal/types"
+import "github.com/charlievieth/goimporter/internal/types"
 
 // Dependencies returns all dependencies of the specified packages.
 //

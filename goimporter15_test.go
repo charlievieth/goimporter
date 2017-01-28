@@ -72,8 +72,8 @@ func init() {
 
 func TestImporter(t *testing.T) {
 	internalPkgs := []string{
-		"git.vieth.io/goimporter/internal/gcimporter15",
-		"git.vieth.io/goimporter/internal/lru",
+		"github.com/charlievieth/goimporter/internal/gcimporter15",
+		"github.com/charlievieth/goimporter/internal/lru",
 	}
 
 	std := importer.Default()

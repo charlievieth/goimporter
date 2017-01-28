@@ -28,7 +28,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"git.vieth.io/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/exact"
 )
 
 // Check type-checks a package and returns the resulting complete package
@@ -122,7 +122,7 @@ type Config struct {
 // DefaultImport is the default importer invoked if Config.Import == nil.
 // The declaration:
 //
-//	import _ "git.vieth.io/goimporter/internal/gcimporter"
+//	import _ "github.com/charlievieth/goimporter/internal/gcimporter"
 //
 // in a client of go/types will initialize DefaultImport to gcimporter.Import.
 var DefaultImport Importer

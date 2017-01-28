@@ -14,8 +14,8 @@ import (
 	"strings"
 	"text/scanner"
 
-	"git.vieth.io/goimporter/internal/exact"
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 type parser struct {

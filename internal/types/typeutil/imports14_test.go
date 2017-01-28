@@ -13,8 +13,8 @@ import (
 	"go/token"
 	"testing"
 
-	"git.vieth.io/goimporter/internal/types"
-	"git.vieth.io/goimporter/internal/types/typeutil"
+	"github.com/charlievieth/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types/typeutil"
 )
 
 func TestDependencies(t *testing.T) {

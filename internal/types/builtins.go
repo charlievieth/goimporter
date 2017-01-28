@@ -10,7 +10,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"git.vieth.io/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/exact"
 )
 
 // builtin type-checks a call to the built-in specified by id and

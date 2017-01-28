@@ -4,7 +4,7 @@
 
 package importer
 
-import "git.vieth.io/goimporter/internal/types"
+import "github.com/charlievieth/goimporter/internal/types"
 
 const (
 	magic   = "\n$$ exports $$\n"

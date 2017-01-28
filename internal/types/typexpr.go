@@ -12,7 +12,7 @@ import (
 	"sort"
 	"strconv"
 
-	"git.vieth.io/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/exact"
 )
 
 // ident type-checks identifier e and initializes x with the value or type of e.

@@ -14,8 +14,8 @@ import (
 	"fmt"
 	"go/token"
 
-	"git.vieth.io/goimporter/internal/exact"
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 // ImportData imports a package from the serialized package data

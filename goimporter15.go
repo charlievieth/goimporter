@@ -12,7 +12,7 @@ import (
 	"os/exec"
 	"runtime"
 
-	"git.vieth.io/goimporter/internal/gcimporter15"
+	"github.com/charlievieth/goimporter/internal/gcimporter15"
 )
 
 // DefaultContext, returns a copy of the default build.Context with updated

@@ -8,7 +8,7 @@ package typeutil
 
 // This file defines utilities for user interfaces that display types.
 
-import "git.vieth.io/goimporter/internal/types"
+import "github.com/charlievieth/goimporter/internal/types"
 
 // IntuitiveMethodSet returns the intuitive method set of a type, T.
 //

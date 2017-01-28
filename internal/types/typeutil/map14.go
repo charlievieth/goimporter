@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 // Map is a hash-table-based mapping from types (types.Type) to

@@ -14,7 +14,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	. "git.vieth.io/goimporter/internal/types"
+	. "github.com/charlievieth/goimporter/internal/types"
 )
 
 var (

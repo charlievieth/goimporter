@@ -5,7 +5,7 @@ package lru
 import (
 	"os"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 type Package struct {

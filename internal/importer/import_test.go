@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"git.vieth.io/goimporter/internal/gcimporter"
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/gcimporter"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 var fset = token.NewFileSet()

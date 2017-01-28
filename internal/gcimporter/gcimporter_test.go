@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 func Default() *build.Context {

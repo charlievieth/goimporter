@@ -6,7 +6,7 @@
 
 package types
 
-import "git.vieth.io/goimporter/internal/exact"
+import "github.com/charlievieth/goimporter/internal/exact"
 
 // Conversion type-checks the conversion T(x).
 // The result is in x.

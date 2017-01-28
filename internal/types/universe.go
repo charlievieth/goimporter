@@ -10,7 +10,7 @@ import (
 	"go/token"
 	"strings"
 
-	"git.vieth.io/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/exact"
 )
 
 var (

@@ -14,7 +14,7 @@ import (
 	"go/types"
 	"sort"
 
-	"git.vieth.io/goimporter/internal/types/typeutil"
+	"github.com/charlievieth/goimporter/internal/types/typeutil"
 )
 
 func ExampleMap() {

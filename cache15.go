@@ -7,8 +7,8 @@ import (
 	"go/types"
 	"os"
 
-	"git.vieth.io/goimporter/internal/gcimporter15"
-	"git.vieth.io/goimporter/internal/lru"
+	"github.com/charlievieth/goimporter/internal/gcimporter15"
+	"github.com/charlievieth/goimporter/internal/lru"
 )
 
 type Cache struct {

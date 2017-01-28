@@ -8,7 +8,7 @@ import (
 	"go/parser"
 	"testing"
 
-	. "git.vieth.io/goimporter/internal/types"
+	. "github.com/charlievieth/goimporter/internal/types"
 )
 
 var testExprs = []testEntry{

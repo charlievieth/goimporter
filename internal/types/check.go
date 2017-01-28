@@ -10,7 +10,7 @@ import (
 	"go/ast"
 	"go/token"
 
-	"git.vieth.io/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/exact"
 )
 
 // debugging/development support

@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"git.vieth.io/goimporter/internal/importer"
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/importer"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 // A PackageInit describes an imported package that needs initialization.

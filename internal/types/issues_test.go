@@ -14,8 +14,8 @@ import (
 	"strings"
 	"testing"
 
-	_ "git.vieth.io/goimporter/internal/gcimporter"
-	. "git.vieth.io/goimporter/internal/types"
+	_ "github.com/charlievieth/goimporter/internal/gcimporter"
+	. "github.com/charlievieth/goimporter/internal/types"
 )
 
 func TestIssue5770(t *testing.T) {

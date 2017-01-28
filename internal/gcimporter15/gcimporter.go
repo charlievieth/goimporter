@@ -5,7 +5,7 @@
 // +build go1.5
 
 // Package gcimporter implements Import for gc-generated object files.
-package gcimporter // import "git.vieth.io/goimporter/internal/gcimporter15"
+package gcimporter // import "github.com/charlievieth/goimporter/internal/gcimporter15"
 
 import (
 	"bufio"
@@ -23,7 +23,7 @@ import (
 	"strings"
 	"text/scanner"
 
-	"git.vieth.io/buildutil"
+	"github.com/charlievieth/buildutil"
 )
 
 // debugging/development support

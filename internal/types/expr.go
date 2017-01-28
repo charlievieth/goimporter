@@ -12,7 +12,7 @@ import (
 	"go/token"
 	"math"
 
-	"git.vieth.io/goimporter/internal/exact"
+	"github.com/charlievieth/goimporter/internal/exact"
 )
 
 /*

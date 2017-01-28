@@ -10,7 +10,7 @@ import (
 	"testing"
 	"text/scanner"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 var typeParserTests = []struct {

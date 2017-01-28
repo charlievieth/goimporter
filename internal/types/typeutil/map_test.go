@@ -15,7 +15,7 @@ import (
 	"go/types"
 	"testing"
 
-	"git.vieth.io/goimporter/internal/types/typeutil"
+	"github.com/charlievieth/goimporter/internal/types/typeutil"
 )
 
 var (

@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 // Information about a specific installation of gccgo.

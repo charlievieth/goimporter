@@ -7,7 +7,7 @@ import (
 	"go/build"
 	"testing"
 
-	"git.vieth.io/goimporter/internal/types"
+	"github.com/charlievieth/goimporter/internal/types"
 )
 
 var packageNames = []string{
@@ -71,8 +71,8 @@ func init() {
 
 func TestImporter(t *testing.T) {
 	internalPkgs := []string{
-		"git.vieth.io/goimporter/internal/gcimporter",
-		"git.vieth.io/goimporter/internal/lru",
+		"github.com/charlievieth/goimporter/internal/gcimporter",
+		"github.com/charlievieth/goimporter/internal/lru",
 	}
 
 	pkgs := make(map[string]*types.Package)
