@@ -36,7 +36,6 @@ func skipSpecialPlatforms(t *testing.T) {
 }
 
 func compile(t *testing.T, dirname, filename string) string {
-	// testenv.MustHaveGoBuild(t)
 	cmd := exec.Command("go", "tool", "compile", filename)
 	cmd.Dir = dirname
 	out, err := cmd.CombinedOutput()
@@ -50,7 +49,6 @@ func compile(t *testing.T, dirname, filename string) string {
 
 // TODO(gri) Remove this function once we switched to new export format by default.
 func compileNewExport(t *testing.T, dirname, filename string) string {
-	// testenv.MustHaveGoBuild(t)
 	cmd := exec.Command("go", "tool", "compile", "-newexport", filename)
 	cmd.Dir = dirname
 	out, err := cmd.CombinedOutput()
@@ -157,22 +155,22 @@ func TestImportTestdataNewExport(t *testing.T) {
 	}
 }
 
-// func TestImportStdLib(t *testing.T) {
-// 	skipSpecialPlatforms(t)
-//
-// 	// This package only handles gc export data.
-// 	if runtime.Compiler != "gc" {
-// 		t.Skipf("gc-built packages not available (compiler = %s)", runtime.Compiler)
-// 		return
-// 	}
-//
-// 	dt := maxTime
-// 	if testing.Short() && testenv.Builder() == "" {
-// 		dt = 10 * time.Millisecond
-// 	}
-// 	nimports := testDir(t, "", time.Now().Add(dt)) // installed packages
-// 	t.Logf("tested %d imports", nimports)
-// }
+func TestImportStdLib(t *testing.T) {
+	skipSpecialPlatforms(t)
+
+	// This package only handles gc export data.
+	if runtime.Compiler != "gc" {
+		t.Skipf("gc-built packages not available (compiler = %s)", runtime.Compiler)
+		return
+	}
+
+	dt := maxTime
+	if testing.Short() {
+		dt = 10 * time.Millisecond
+	}
+	nimports := testDir(t, "", time.Now().Add(dt)) // installed packages
+	t.Logf("tested %d imports", nimports)
+}
 
 var importedObjectTests = []struct {
 	name string
